@@ -1,3 +1,9 @@
-include ':data'
+include ':core:ui'
+include ':features:characters'
+include ':core:database'
+include ':core:model'
+include ':core:network'
+include ':core:domain'
+include ':core:data'
 include ':app'
-rootProject.name = "MavelDemo"
+rootProject.name = "MarvelDemo"
