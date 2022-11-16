@@ -65,7 +65,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCharacterNetworkService(retrofit: Retrofit): CharacterNetworkService =
-        retrofit.create(CharacterNetworkService::class.java)
+    fun provideCharacterNetworkService(retrofit: Retrofit): CharacterNetworkService{
+        return retrofit.create(CharacterNetworkService::class.java)
+    }
 
 }

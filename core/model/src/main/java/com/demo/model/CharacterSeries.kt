@@ -7,6 +7,7 @@ data class CharacterSeries(
     var modified: String,
     var startYear: String,
     var endYear: String,
-    var thumbnail: ThumbnailInfo,
+    var thumbnailPath: String,
+    var thumbnailExtension: String,
     var rating: String,
 )
