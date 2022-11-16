@@ -9,8 +9,5 @@ java {
 }
 
 dependencies {
-
-    implementation(project(":core:network"))
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
