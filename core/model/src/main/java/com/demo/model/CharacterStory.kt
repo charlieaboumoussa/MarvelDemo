@@ -6,6 +6,7 @@ data class CharacterStory(
     var description: String,
     var modified: String,
     var resourceURI: String,
-    var thumbnail: ThumbnailInfo,
+    var thumbnailPath: String,
+    var thumbnailExtension: String,
     var type: String,
 )

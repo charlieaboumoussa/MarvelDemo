@@ -7,6 +7,7 @@ data class CharacterEvent(
     var modified: String,
     var start: String,
     var end: String,
-    var thumbnail: ThumbnailInfo,
+    var thumbnailPath: String,
+    var thumbnailExtension: String,
     var rating: String,
 )

@@ -5,6 +5,7 @@ data class MarvelCharacter(
     var name: String,
     var description: String,
     var modified: String,
-    var thumbnail: ThumbnailInfo,
+    var thumbnailPath: String,
+    var thumbnailExtension: String,
     var resourceURI: String,
 )
