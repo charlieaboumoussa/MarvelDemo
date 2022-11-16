@@ -1,10 +1,12 @@
 package com.demo.model
 
-data class MarvelCharacter(
+data class CharacterEvent(
     var id: Int,
-    var name: String,
+    var title: String,
     var description: String,
     var modified: String,
+    var start: String,
+    var end: String,
     var thumbnail: ThumbnailInfo,
-    var resourceURI: String,
+    var rating: String,
 )
