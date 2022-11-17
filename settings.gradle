@@ -1,10 +1,10 @@
 include ':core:ui'
 include ':features:characters'
 include ':core:database'
+include ':core:common'
 include ':core:model'
 include ':core:network'
 include ':core:domain'
 include ':core:data'
 include ':app'
 rootProject.name = "MarvelDemo"
-include ':core:common'

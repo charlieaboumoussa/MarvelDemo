@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_default_service">A service error happened. Please contact customer support if this error keeps showing.</string>
+</resources>
