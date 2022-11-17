@@ -3,15 +3,15 @@ package com.demo.network.source
 import com.demo.network.model.*
 
 interface CharacterRemoteDataSource {
-    suspend fun getAllCharacters(offset: Int, limit: Int) : MutableList<MarvelCharacterDto>
+    suspend fun getAllCharacters(offset: Int, limit: Int) : List<MarvelCharacterDto>
 
     suspend fun getCharacterById(id : String) : MarvelCharacterDto
 
-    suspend fun getCharacterComics(id : String) : MutableList<CharacterComicDto>
+    suspend fun getCharacterComics(id : String) : List<CharacterComicDto>
 
-    suspend fun getCharacterEvents(id : String) : MutableList<CharacterEventDto>
+    suspend fun getCharacterEvents(id : String) : List<CharacterEventDto>
 
-    suspend fun getCharacterSeries(id : String) : MutableList<CharacterSeriesDto>
+    suspend fun getCharacterSeries(id : String) : List<CharacterSeriesDto>
 
-    suspend fun getCharacterStories(id : String) : MutableList<CharacterStoryDto>
+    suspend fun getCharacterStories(id : String) : List<CharacterStoryDto>
 }

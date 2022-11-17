@@ -9,7 +9,7 @@ import com.demo.common.state.Resource
 import com.demo.ui.R
 import kotlinx.coroutines.launch
 
-abstract class BaseActivity : ComponentActivity() {
+open class BaseActivity : ComponentActivity() {
 
     private lateinit var _loadingDialog : Dialog
 
@@ -61,5 +61,5 @@ abstract class BaseActivity : ComponentActivity() {
         // TODO[11/17/2022]: Show Error
     }
 
-    abstract fun attachViewModel() : BaseViewModel?
+    fun attachViewModel() : BaseViewModel? = null
 }

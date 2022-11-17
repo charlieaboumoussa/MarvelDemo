@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "CHARACTER_STORY")
+@Entity(tableName = "CHARACTER_SERIES")
 class CharacterSeriesDB {
     @PrimaryKey(autoGenerate = false)
     var id: Int = 0

@@ -8,22 +8,22 @@ import retrofit2.http.Query
 interface CharacterNetworkService {
 
     @GET(value = "characters")
-    suspend fun getAllCharacters(@Query("offset") offset: Int, @Query("limit") limit :Int) : MutableList<MarvelCharacterDto>
+    suspend fun getAllCharacters(@Query("offset") offset: Int, @Query("limit") limit :Int) : List<MarvelCharacterDto>
 
     @GET(value = "characters/{characterId}")
     suspend fun getCharacterById(@Path("characterId") id : String) : MarvelCharacterDto
 
     @GET(value = "characters/{characterId}/comics")
-    suspend fun getCharacterComics(@Path("characterId") id : String) : MutableList<CharacterComicDto>
+    suspend fun getCharacterComics(@Path("characterId") id : String) : List<CharacterComicDto>
 
     @GET(value = "characters/{characterId}/events")
-    suspend fun getCharacterEvents(@Path("characterId") id : String) : MutableList<CharacterEventDto>
+    suspend fun getCharacterEvents(@Path("characterId") id : String) : List<CharacterEventDto>
 
     @GET(value = "characters/{characterId}/series")
-    suspend fun getCharacterSeries(@Path("characterId") id : String) : MutableList<CharacterSeriesDto>
+    suspend fun getCharacterSeries(@Path("characterId") id : String) : List<CharacterSeriesDto>
 
     @GET(value = "characters/{characterId}/stories")
-    suspend fun getCharacterStories(@Path("characterId") id : String) : MutableList<CharacterStoryDto>
+    suspend fun getCharacterStories(@Path("characterId") id : String) : List<CharacterStoryDto>
 
 
 

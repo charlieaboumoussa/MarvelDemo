@@ -11,7 +11,7 @@ class CharacterRemoteDataSourceImpl @Inject constructor(
     private val characterNetworkApi: CharacterNetworkService
 ) : CharacterRemoteDataSource{
 
-    override suspend fun getAllCharacters(offset: Int, limit: Int) : MutableList<MarvelCharacterDto>{
+    override suspend fun getAllCharacters(offset: Int, limit: Int) : List<MarvelCharacterDto>{
         return characterNetworkApi.getAllCharacters(offset, limit)
     }
 
@@ -19,19 +19,19 @@ class CharacterRemoteDataSourceImpl @Inject constructor(
         return characterNetworkApi.getCharacterById(id)
     }
 
-    override suspend fun getCharacterComics(id : String) : MutableList<CharacterComicDto>{
+    override suspend fun getCharacterComics(id : String) : List<CharacterComicDto>{
         return characterNetworkApi.getCharacterComics(id)
     }
 
-    override suspend fun getCharacterEvents(id : String) : MutableList<CharacterEventDto>{
+    override suspend fun getCharacterEvents(id : String) : List<CharacterEventDto>{
         return characterNetworkApi.getCharacterEvents(id)
     }
 
-    override suspend fun getCharacterSeries(id : String) : MutableList<CharacterSeriesDto>{
+    override suspend fun getCharacterSeries(id : String) : List<CharacterSeriesDto>{
         return characterNetworkApi.getCharacterSeries(id)
     }
 
-    override suspend fun getCharacterStories(id : String) : MutableList<CharacterStoryDto>{
+    override suspend fun getCharacterStories(id : String) : List<CharacterStoryDto>{
         return characterNetworkApi.getCharacterStories(id)
     }
 }
