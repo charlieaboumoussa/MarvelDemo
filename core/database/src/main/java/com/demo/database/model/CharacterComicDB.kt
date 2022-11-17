@@ -34,7 +34,7 @@ class CharacterComicDB {
     var diamondCode: String = ""
 
     @ColumnInfo(name = "TEXT_OBJECTS")
-    var textObjects: List<String> = emptyList()
+    var textObjects: ArrayList<String> = arrayListOf()
 
     @ColumnInfo(name = "FORMAT")
     var format: String = ""

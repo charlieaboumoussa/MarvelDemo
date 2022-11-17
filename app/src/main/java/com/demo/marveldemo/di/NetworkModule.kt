@@ -2,6 +2,8 @@ package com.demo.marveldemo.di
 
 import com.demo.marveldemo.BuildConfig
 import com.demo.network.retrofit.CharacterNetworkService
+import com.demo.network.source.CharacterRemoteDataSource
+import com.demo.network.source.CharacterRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -69,4 +71,9 @@ object NetworkModule {
         return retrofit.create(CharacterNetworkService::class.java)
     }
 
+    @Provides
+    @Singleton
+    fun provideCharacterRemoteDataSource(characterNetworkApi: CharacterNetworkService): CharacterRemoteDataSource {
+        return CharacterRemoteDataSourceImpl(characterNetworkApi)
+    }
 }

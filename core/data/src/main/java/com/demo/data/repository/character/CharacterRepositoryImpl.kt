@@ -12,7 +12,7 @@ import javax.inject.Singleton
 class CharacterRepositoryImpl @Inject constructor(
     private val characterRemoteDataSource : CharacterRemoteDataSource
 ) : CharacterRepository {
-    override suspend fun getAllCharacters(offset: Int, limit: Int): Flow<MutableList<MarvelCharacter>> = flow{
+    override suspend fun getAllCharacters(offset: Int, limit: Int): Flow<List<MarvelCharacter>> = flow{
         emit(
             characterRemoteDataSource.getAllCharacters(offset, limit).map {
                 it.toEntityModel()
@@ -26,7 +26,7 @@ class CharacterRepositoryImpl @Inject constructor(
         )
     }
 
-    override suspend fun getCharacterComics(id: String): Flow<MutableList<CharacterComic>> = flow{
+    override suspend fun getCharacterComics(id: String): Flow<List<CharacterComic>> = flow{
         emit(
             characterRemoteDataSource.getCharacterComics(id).map {
                 it.toEntityModel()
@@ -34,7 +34,7 @@ class CharacterRepositoryImpl @Inject constructor(
         )
     }
 
-    override suspend fun getCharacterEvents(id: String): Flow<MutableList<CharacterEvent>> = flow{
+    override suspend fun getCharacterEvents(id: String): Flow<List<CharacterEvent>> = flow{
         emit(
             characterRemoteDataSource.getCharacterEvents(id).map {
                 it.toEntityModel()
@@ -42,7 +42,7 @@ class CharacterRepositoryImpl @Inject constructor(
         )
     }
 
-    override suspend fun getCharacterSeries(id: String): Flow<MutableList<CharacterSeries>> = flow{
+    override suspend fun getCharacterSeries(id: String): Flow<List<CharacterSeries>> = flow{
         emit(
             characterRemoteDataSource.getCharacterSeries(id).map {
                 it.toEntityModel()
@@ -50,7 +50,7 @@ class CharacterRepositoryImpl @Inject constructor(
         )
     }
 
-    override suspend fun getCharacterStories(id: String): Flow<MutableList<CharacterStory>> = flow{
+    override suspend fun getCharacterStories(id: String): Flow<List<CharacterStory>> = flow{
         emit(
             characterRemoteDataSource.getCharacterStories(id).map {
                 it.toEntityModel()
