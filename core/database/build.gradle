@@ -6,9 +6,14 @@ plugins {
 }
 
 android {
-    namespace 'com.demo.database2'
+    namespace 'com.demo.database'
+    compileSdkVersion 33
 
     defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
         kapt {
             arguments {
                 arg("room.schemaLocation", "$projectDir/schemas")
