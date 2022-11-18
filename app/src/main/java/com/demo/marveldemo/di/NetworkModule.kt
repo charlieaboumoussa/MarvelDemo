@@ -1,5 +1,6 @@
 package com.demo.marveldemo.di
 
+import android.util.Log
 import com.demo.marveldemo.BuildConfig
 import com.demo.network.retrofit.CharacterNetworkService
 import com.demo.network.source.CharacterRemoteDataSource
@@ -24,7 +25,7 @@ object NetworkModule {
     @Singleton
     fun networkInterceptor(): Interceptor = Interceptor { chain ->
         val request = chain.request()
-        val originalHttpUrl = request.url()
+        val originalHttpUrl = request.url
 
         val currentTimestamp = Calendar.getInstance().timeInMillis
 
@@ -33,7 +34,6 @@ object NetworkModule {
             .addQueryParameter("apikey", BuildConfig.API_KEY)
             .addQueryParameter("hash", BuildConfig.HASH)
             .build()
-
         val builder = request.newBuilder()
 //            .addHeader("Content-Type", "application/json")
             .url(url)

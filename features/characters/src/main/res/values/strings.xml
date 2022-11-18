@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="character">Character</string>
+    <string name="marvel_characters">Marvel Characters</string>
+    <string name="comics">Comics</string>
+    <string name="stories">Stories</string>
+    <string name="events">Events</string>
+    <string name="series">Series</string>
+</resources>

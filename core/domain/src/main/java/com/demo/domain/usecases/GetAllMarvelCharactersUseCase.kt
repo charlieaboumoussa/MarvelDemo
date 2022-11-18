@@ -1,4 +1,4 @@
-package com.demo.domain1.usecases
+package com.demo.domain.usecases
 
 import com.demo.common.state.Resource
 import com.demo.data.repository.character.CharacterRepository

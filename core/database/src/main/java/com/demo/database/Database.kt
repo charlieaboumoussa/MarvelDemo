@@ -3,7 +3,7 @@ package com.demo.database
 import androidx.room.Database
 import androidx.room.TypeConverters
 import androidx.room.RoomDatabase
-import com.demo.database.converts.StringListConverter
+import com.demo.database.converters.StringListConverter
 import com.demo.database.dao.MarvelCharacterDao
 import com.demo.database.model.*
 

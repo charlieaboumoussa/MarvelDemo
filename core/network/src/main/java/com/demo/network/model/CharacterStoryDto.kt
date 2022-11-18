@@ -9,6 +9,6 @@ data class CharacterStoryDto(
     var description: String,
     var modified: String,
     var resourceURI: String,
-    var thumbnail: HashMap<String, String>,
+    var thumbnail: Map<String, String>,
     var type: String,
 )
