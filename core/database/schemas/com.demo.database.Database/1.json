@@ -1,0 +1,348 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "87a248365e0b1ba8356ad1bfd61a9e80",
+    "entities": [
+      {
+        "tableName": "CHARACTER_COMIC",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `DIGITAL_ID` INTEGER NOT NULL, `DESCRIPTION` TEXT NOT NULL, `MODIFIED` TEXT NOT NULL, `TITLE` TEXT NOT NULL, `ISSUE_NUMBER` INTEGER NOT NULL, `VARIANT_DESCRIPTION` TEXT NOT NULL, `UPC` TEXT NOT NULL, `DIAMOND_CODE` TEXT NOT NULL, `TEXT_OBJECTS` TEXT NOT NULL, `FORMAT` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "digitalId",
+            "columnName": "DIGITAL_ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "MODIFIED",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "TITLE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "issueNumber",
+            "columnName": "ISSUE_NUMBER",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "variantDescription",
+            "columnName": "VARIANT_DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "upc",
+            "columnName": "UPC",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "diamondCode",
+            "columnName": "DIAMOND_CODE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "textObjects",
+            "columnName": "TEXT_OBJECTS",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "format",
+            "columnName": "FORMAT",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CHARACTER_EVENT",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `DESCRIPTION` TEXT NOT NULL, `MODIFIED` TEXT NOT NULL, `TITLE` TEXT NOT NULL, `START` TEXT NOT NULL, `END` TEXT NOT NULL, `THUMBNAIL_PATH` TEXT NOT NULL, `THUMBNAIL_EXTENSION` TEXT NOT NULL, `TYPE` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "MODIFIED",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "TITLE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startDate",
+            "columnName": "START",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endDate",
+            "columnName": "END",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "THUMBNAIL_PATH",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailExtension",
+            "columnName": "THUMBNAIL_EXTENSION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "TYPE",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CHARACTER_SERIES",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `DESCRIPTION` TEXT NOT NULL, `MODIFIED` TEXT NOT NULL, `TITLE` TEXT NOT NULL, `START_YEAR` TEXT NOT NULL, `END_YEAR` TEXT NOT NULL, `THUMBNAIL_PATH` TEXT NOT NULL, `THUMBNAIL_EXTENSION` TEXT NOT NULL, `TYPE` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "MODIFIED",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "TITLE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startYear",
+            "columnName": "START_YEAR",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endYear",
+            "columnName": "END_YEAR",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "THUMBNAIL_PATH",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailExtension",
+            "columnName": "THUMBNAIL_EXTENSION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "TYPE",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "CHARACTER_STORY",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `DESCRIPTION` TEXT NOT NULL, `MODIFIED` TEXT NOT NULL, `TITLE` TEXT NOT NULL, `RESOURCE_URI` TEXT NOT NULL, `THUMBNAIL_PATH` TEXT NOT NULL, `THUMBNAIL_EXTENSION` TEXT NOT NULL, `TYPE` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "MODIFIED",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "TITLE",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resourceURI",
+            "columnName": "RESOURCE_URI",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "THUMBNAIL_PATH",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailExtension",
+            "columnName": "THUMBNAIL_EXTENSION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "TYPE",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MARVEL_CHARACTER",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `NAME` TEXT NOT NULL, `DESCRIPTION` TEXT NOT NULL, `MODIFIED` TEXT NOT NULL, `THUMBNAIL_PATH` TEXT NOT NULL, `THUMBNAIL_EXTENSION` TEXT NOT NULL, `RESOURCE_URI` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "NAME",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modified",
+            "columnName": "MODIFIED",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailPath",
+            "columnName": "THUMBNAIL_PATH",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumbnailExtension",
+            "columnName": "THUMBNAIL_EXTENSION",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resourceURI",
+            "columnName": "RESOURCE_URI",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '87a248365e0b1ba8356ad1bfd61a9e80')"
+    ]
+  }
+}

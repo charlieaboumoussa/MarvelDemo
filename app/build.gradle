@@ -1,0 +1,145 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "33.0.0"
+
+//    signingConfigs {
+//        signed {
+//            storeFile file(rootProject.file('keystore/keystore.jks'))
+//            storePassword 'LpKoJi098)(*'
+//            keyAlias 'marveldemo'
+//            keyPassword 'mlpnko09)('
+//        }
+//    }
+
+    defaultConfig {
+        applicationId "com.demo.marveldemo"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com:443/v1/public/"'
+
+        buildConfigField "String", "TS", '"1668605259"'
+        buildConfigField "String", "HASH", '"72402b578ddb3a950c904783fe2a579c"'
+        buildConfigField "String", "API_KEY", '"5fcf04d98a1c92186e12ed6defa222ca"'
+
+        buildConfigField "int", "READ_TIMEOUT", "30"
+        buildConfigField "int", "WRITE_TIMEOUT", "30"
+        buildConfigField "int", "CONNECTION_TIMEOUT", "10"
+        buildConfigField "long", "CACHE_SIZE_BYTES", "10*10*1024"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    def versionNumber = "1.0.0"
+    def buildNumber = 1
+
+    flavorDimensions "environment"
+    productFlavors {
+        dev {
+            dimension "environment"
+            applicationIdSuffix ".dev"
+            versionCode 1
+            versionName "$versionNumber-dev-$buildNumber"
+            resValue "string", "app_name", "DMarvelDemo"
+            //TODO add env url
+//            buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com:443/v1/public"'
+        }
+
+        staging {
+            dimension "environment"
+            applicationIdSuffix ".staging"
+            versionCode 1
+            versionName "$versionNumber-staging-$buildNumber"
+            resValue "string", "app_name", "TMarvelDemo"
+            //TODO add env url
+        }
+
+        production {
+            dimension "environment"
+            versionCode 1
+            versionName "$versionNumber"
+            resValue "string", "app_name", "MarvelDemo"
+            //TODO add env url
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+        compose true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion kotlin_version
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+    implementation "com.google.android.material:material:1.7.0"
+    implementation 'androidx.fragment:fragment-ktx:1.5.4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+
+    implementation "androidx.room:room-runtime:2.4.3"
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.activity:activity-compose:1.7.0-alpha02'
+    implementation 'androidx.compose.foundation:foundation'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation(project(":core:ui"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
+    implementation(project(":core:network"))
+
+    implementation(project(":features:characters"))
+}
