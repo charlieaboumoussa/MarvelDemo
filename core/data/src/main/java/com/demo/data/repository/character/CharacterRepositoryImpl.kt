@@ -1,4 +1,4 @@
-package com.demo.data.repository.character
+package com.demo.data1.repository.character
 
 import com.demo.data.mappers.toEntityModel
 import com.demo.model.*
@@ -10,9 +10,10 @@ import javax.inject.Singleton
 
 @Singleton
 class CharacterRepositoryImpl @Inject constructor(
-    private val characterRemoteDataSource : CharacterRemoteDataSource
+    private val characterRemoteDataSource : CharacterRemoteDataSource,
+    private val characterLocalDataSource : CharacterLocalDataSource,
 ) : CharacterRepository {
-    override suspend fun getAllCharacters(offset: Int, limit: Int): Flow<List<MarvelCharacter>> = flow{
+    override suspend fun getAllCharacters(offset: Int, limit: Int): Flow<List<MarvelCharacter>>  = flow{
         emit(
             characterRemoteDataSource.getAllCharacters(offset, limit).map {
                 it.toEntityModel()
