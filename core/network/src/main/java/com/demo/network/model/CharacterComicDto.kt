@@ -13,6 +13,5 @@ data class CharacterComicDto(
     var modified: String,
     var upc: String,
     var diamondCode: String,
-    var textObjects: List<String>,
     var format: String,
 )

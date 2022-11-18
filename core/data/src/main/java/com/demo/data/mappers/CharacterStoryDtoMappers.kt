@@ -1,10 +1,6 @@
 package com.demo.data.mappers
 
-import com.demo.model.CharacterEvent
-import com.demo.model.CharacterSeries
 import com.demo.model.CharacterStory
-import com.demo.network.model.CharacterEventDto
-import com.demo.network.model.CharacterSeriesDto
 import com.demo.network.model.CharacterStoryDto
 
 fun CharacterStory.toDtoModel(): CharacterStoryDto {
