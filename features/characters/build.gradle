@@ -66,6 +66,8 @@ dependencies {
     implementation 'androidx.compose.foundation:foundation'
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
     implementation "androidx.navigation:navigation-compose:$nav_version"
+    implementation "io.coil-kt:coil-compose:2.2.2"
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.25.1"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
@@ -76,5 +78,6 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:ui"))
     implementation(project(":core:common"))
+    implementation(project(":core:navigation"))
 //    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
 }

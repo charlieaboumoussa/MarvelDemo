@@ -9,13 +9,8 @@ data class CharacterEventDto(
     var title: String,
     var description: String,
     var modified: String,
-
-    @SerializedName("start")
     var startDate: String,
-
-    @SerializedName("end")
     var endDate: String,
-
     var thumbnail: Map<String, String>,
     var rating: String,
 )

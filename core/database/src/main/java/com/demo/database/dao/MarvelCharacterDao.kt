@@ -20,7 +20,10 @@ interface MarvelCharacterDao : BaseDao<MarvelCharacterDB> {
     fun flowCharacters(): Flow<List<MarvelCharacterDB>>
 
     @Query("SELECT * FROM MARVEL_CHARACTER WHERE ID = :id")
-    fun flowCharacterById(id : String): Flow<List<MarvelCharacterDB>>
+    fun getCharacterById(id : Int): List<MarvelCharacterDB>
+
+    @Query("SELECT * FROM MARVEL_CHARACTER WHERE ID = :id")
+    fun flowCharacterById(id : Int): Flow<List<MarvelCharacterDB>>
 
     @Query("DELETE FROM MARVEL_CHARACTER")
     suspend fun nuke()

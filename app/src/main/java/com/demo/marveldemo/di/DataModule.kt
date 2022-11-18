@@ -2,6 +2,7 @@ package com.demo.marveldemo.di
 
 import com.demo.data.repository.character.CharacterRepository
 import com.demo.data.repository.character.CharacterRepositoryImpl
+import com.demo.network.source.CharacterLocalDataSourceImpl
 import com.demo.network.source.CharacterRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
@@ -16,8 +17,11 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideCharacterRepository(remoteDataSource: CharacterRemoteDataSourceImpl): CharacterRepository {
-        return CharacterRepositoryImpl(remoteDataSource)
+    fun provideCharacterRepository(
+        remoteDataSource: CharacterRemoteDataSourceImpl,
+        localDataSource: CharacterLocalDataSourceImpl,
+    ): CharacterRepository {
+        return CharacterRepositoryImpl(remoteDataSource, localDataSource)
     }
 
 }

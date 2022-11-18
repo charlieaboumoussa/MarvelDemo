@@ -14,7 +14,6 @@ fun CharacterComic.toDtoModel(): CharacterComicDto {
         modified,
         upc,
         diamondCode,
-        textObjects,
         format,
     )
 }
@@ -30,7 +29,6 @@ fun CharacterComicDto.toEntityModel(): CharacterComic {
         modified,
         upc,
         diamondCode,
-        textObjects,
         format,
     )
 }
